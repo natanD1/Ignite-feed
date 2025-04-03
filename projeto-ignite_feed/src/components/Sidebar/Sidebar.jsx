@@ -9,7 +9,7 @@ export function Sidebar(){
              <div className={styles.profile}>
                 
                 <strong>
-                    Natan da Silva Dourado
+                    Natan Dourado
                 </strong>
                 
                 <span>
