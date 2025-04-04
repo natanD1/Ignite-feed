@@ -1,15 +1,17 @@
 import styles from './Sidebar.module.css'
-import { PencilLine } from 'phosphor-react'
+import {PencilLine} from 'phosphor-react'
+import {Avatar} from "../Avatar/Avatar.jsx";
 
-export function Sidebar(){
-    return(
+export function Sidebar() {
+    return (
         <aside className={styles.sidebar}>
             <img className={styles.cover}
                  src="https://picsum.photos/1920/1080?random"
                  alt=""/>
 
             <div className={styles.profile}>
-                <img className={styles.avatar} src="https://github.com/natanD1.png" alt="Foto de Perfil"/>
+
+                <Avatar hasBorder src="https://github.com/natanD1.png"/>
 
                 <strong>Natan Dourado</strong>
                 <span>Web Developer & UI/UX Designer</span>
