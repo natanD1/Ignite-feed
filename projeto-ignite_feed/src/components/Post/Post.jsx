@@ -13,7 +13,7 @@ export function Post() {
 
                 <div className={styles.authorInfo}>
                     <strong>Rafael Favaro</strong>
-                    <span>Tech Lead - Inovação e Tecnologia</span>
+                    <span>Tech Lead</span>
                 </div>
             </div>
             <time title="11 de Março de 2025 às 13:35" dateTime="2025-03-11 13:35:00">Públicado há 1h</time>

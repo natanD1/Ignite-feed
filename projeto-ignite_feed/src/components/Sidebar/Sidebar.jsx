@@ -7,10 +7,10 @@ export function Sidebar() {
         <aside className={styles.sidebar}>
             <img className={styles.cover}
                  src="https://picsum.photos/1920/1080?random"
-                 alt=""/>
+                 alt=""
+            />
 
             <div className={styles.profile}>
-
                 <Avatar hasBorder src="https://github.com/natanD1.png"/>
 
                 <strong>Natan Dourado</strong>
