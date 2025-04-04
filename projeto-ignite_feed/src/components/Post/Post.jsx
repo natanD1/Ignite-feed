@@ -1,15 +1,19 @@
-import styles from './Post.module.css'
 import {Comment} from "../Comment/Comment.jsx";
+import {Avatar} from "../Avatar/Avatar.jsx";
+
+import styles from './Post.module.css'
 
 export function Post() {
     return (<article className={styles.post}>
 
         <header>
             <div className={styles.author}>
-                <img className={styles.avatar} src="https://github.com/natanD1.png" alt="Foto de Perfil"/>
+
+                <Avatar hasBorder src="https://github.com/favaro01.png" />
+
                 <div className={styles.authorInfo}>
-                    <strong>Natan Dourado</strong>
-                    <span>Web Developer & UX/UI Designer</span>
+                    <strong>Rafael Favaro</strong>
+                    <span>Tech Lead - Inovação e Tecnologia</span>
                 </div>
             </div>
             <time title="11 de Março de 2025 às 13:35" dateTime="2025-03-11 13:35:00">Públicado há 1h</time>
