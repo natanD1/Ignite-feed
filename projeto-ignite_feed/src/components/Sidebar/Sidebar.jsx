@@ -23,24 +23,7 @@ export function Sidebar() {
                     Editar seu perfil
                 </a>
             </footer>
-             <div className={styles.profile}>
-                
-                <strong>
-                    Natan Dourado
-                </strong>
-                
-                <span>
-                    Web Developer & UI/UX Designer
-                </span>
-                
-                <footer>
-                    <a href="#">
-                        <PencilLine size={20}/>
-                        Editar seu perfil
-                    </a>
-                </footer>
-                
-             </div>
+
         </aside>
     )
 }   
