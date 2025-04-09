@@ -20,7 +20,7 @@ export function Post({author, publishedAt, content}) {
         addSuffix: true,
     })
 
-    function handleCreateNewComment() {
+    function handleCreateNewComment(event) {
         event.preventDefault()
 
         setComments([...comments, newCommentText])
@@ -28,11 +28,25 @@ export function Post({author, publishedAt, content}) {
         setNewCommentText('')
     }
 
-    function handleNewCommentChange() {
-        setNewCommentText(event.target.value);
+    function deleteComment(commentToDelete) {
+        const commentsWithoutDeletedOne = comments.filter(comment => {
+            return comment !== commentToDelete;
+        })
 
-        console.log(newCommentText)
+        setComments(commentsWithoutDeletedOne);
     }
+
+    function handleNewCommentChange(event) {
+        event.target.setCustomValidity("");
+
+        setNewCommentText(event.target.value);
+    }
+
+    function handleNewCommentInvalid(event) {
+        event.target.setCustomValidity("Este campo é obrigatório");
+    }
+
+    const isNewCommentEmpty = newCommentText.length === 0;
 
     return (
         <article className={styles.post}>
@@ -63,22 +77,31 @@ export function Post({author, publishedAt, content}) {
             <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
                 <strong>Deixe seu feedback</strong>
                 <textarea
-                    onChange={handleNewCommentChange}
-                    value={newCommentText}
                     name="comment"
                     placeholder="Deixe um comentário"
+                    value={newCommentText}
+                    onChange={handleNewCommentChange}
+                    onInvalid={handleNewCommentInvalid}
+                    required
                 />
                 <footer>
-                    <button type="submit">Publicar</button>
+                    <button
+                        type="submit"
+                        disabled={isNewCommentEmpty}
+                    >
+                        Publicar
+                    </button>
                 </footer>
             </form>
 
             <div className={styles.commentList}>
                 {comments.map(comment => {
-                    return <Comment
-                        key={comment}
-                        comment={comment}
-                    />
+                    return (
+                        <Comment
+                            key={comment}
+                            content={comment}
+                            onDeleteComment={deleteComment}
+                        />)
                 })}
             </div>
 

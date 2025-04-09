@@ -4,7 +4,7 @@ import {Post} from './components/Post/Post.jsx'
 
 import styles from './App.module.css'
 
-const post = [
+const posts = [
     {
         id: 1,
         author: {
@@ -17,7 +17,7 @@ const post = [
             {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifólio'},
             {type: 'link', content: '#studying'},
         ],
-        publishedAt: new Date('2022-05-03 20:00:00')
+        publishedAt: new Date('2025-04-03 20:00:00')
     },
     {
         id: 2,
@@ -31,9 +31,9 @@ const post = [
             {type: 'paragraph', content: 'Estou estudando sobre WEBGL e Three.js!'},
             {type: 'link', content: '#euamoprogramação'}
         ],
-        publishedAt: new Date('2022-05-10 20:00:00')
+        publishedAt: new Date('2025-04-8 14:29:00')
     }
-]; // Qtnd de posts
+];
 
 function App() {
     return (
@@ -42,7 +42,7 @@ function App() {
             <div className={styles.wrapper}>
                 <Sidebar/>
                 <main>
-                    {post.map(post => {
+                    {posts.map(post => {
                         return (
                             <Post
                                 key={post.id}
